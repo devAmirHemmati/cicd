@@ -11,10 +11,10 @@
 
     <script>
       let ws;
-      const proto = window.location.protocol === "https" ? "wss" : "ws";
+      const proto = window.location.protocol === "https:" ? "wss" : "ws";
       const userCountEl = document.getElementById("user-count");
 
-      ws = new WebSocket(`${proto}//${window.location.host}`);
+      ws = new WebSocket(`${proto}://${window.location.host}`);
 
       ws.onmessage = (event) => {
         console.log("data", event.data);
